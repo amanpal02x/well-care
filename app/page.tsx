@@ -65,12 +65,12 @@ export default function HomePage() {
   ];
 
   const industries = [
-    { icon: Landmark, title: 'Government Labs', desc: 'End-to-end solutions for state and central diagnostic facilities.', img: '/hero-lab.png' },
-    { icon: Sprout, title: 'Agriculture & Soil', desc: 'Specialized equipment for soil nutritional analysis and crop monitoring.', img: '/chem-lab.png' },
-    { icon: Droplets, title: 'Environmental Testing', desc: 'Solutions for water quality and air pollution monitoring.', img: '/industrial-health.png' },
-    { icon: FlaskConical, title: 'Pharmaceutical QC', desc: 'High-purity solvents and glassware meeting USP/BP/IP standards.', img: '/chem-lab.png' },
-    { icon: Microscope, title: 'Research & Biotech', desc: 'Supporting advanced research with specialized reagents.', img: '/hero-lab.png' },
-    { icon: GraduationCap, title: 'Universities', desc: 'Equipping academic labs with durable scientific tools.', img: '/glassware.png' }
+    { icon: Landmark, title: 'Government Labs', slug: 'government-labs', desc: 'End-to-end solutions for state and central diagnostic facilities.', img: '/solutions/government-labs.png' },
+    { icon: Sprout, title: 'Agriculture & Soil', slug: 'agriculture-soil', desc: 'Specialized equipment for soil nutritional analysis and crop monitoring.', img: '/solutions/agriculture-soil.png' },
+    { icon: Droplets, title: 'Environmental Testing', slug: 'environmental-testing', desc: 'Solutions for water quality and air pollution monitoring.', img: '/solutions/environmental-testing.png' },
+    { icon: FlaskConical, title: 'Pharmaceutical QC', slug: 'pharmaceutical-qc', desc: 'High-purity solvents and glassware meeting USP/BP/IP standards.', img: '/solutions/pharmaceutical-qc.png' },
+    { icon: Microscope, title: 'Research & Biotech', slug: 'research-biotech', desc: 'Supporting advanced research with specialized reagents.', img: '/solutions/research-biotech.png' },
+    { icon: GraduationCap, title: 'Universities', slug: 'universities', desc: 'Equipping academic labs with durable scientific tools.', img: '/solutions/universities.png' }
   ];
 
   return (
@@ -192,47 +192,61 @@ export default function HomePage() {
             </div>
 
             <div className="mb-20">
-              <div className="flex items-center gap-3 mb-8">
-                <Microscope className="text-[#002147] w-8 h-8" />
-                <h3 className="text-2xl font-bold">Laboratory Chemicals</h3>
+              <div className="flex items-center justify-between mb-8 gap-4">
+                <div className="flex items-center gap-3">
+                  <Microscope className="text-[#002147] w-8 h-8" />
+                  <h3 className="text-2xl font-bold">Laboratory Chemicals</h3>
+                </div>
+                <Link href="/products/chemicals" className="text-sm font-bold text-[#002147] hover:underline flex items-center gap-2">
+                  View Full Category <ArrowRight className="w-4 h-4" />
+                </Link>
               </div>
               <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
                 {chemicals.map((item, i) => (
-                  <motion.div key={i} whileHover={{ y: -5 }} className="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm transition-all">
-                    <div className="relative h-48 rounded-xl overflow-hidden mb-6">
-                      <Image src={item.img} alt={item.name} fill className="object-cover" />
-                    </div>
-                    <span className="text-[10px] font-bold uppercase text-[#002147] bg-[#002147]/10 px-2 py-1 rounded mb-2 inline-block">{item.grade}</span>
-                    <h4 className="text-xl font-bold mb-2">{item.name}</h4>
-                    <p className="text-slate-500 text-sm mb-4">{item.desc}</p>
-                    <div className="flex justify-between items-center pt-4 border-t border-slate-100">
-                      <span className="text-xs font-bold text-slate-400">SKU: {item.sku}</span>
-                      <a href="#contact" className="text-[#002147] font-bold text-sm flex items-center gap-1 hover:underline">Inquiry <ArrowRight className="w-4 h-4" /></a>
-                    </div>
-                  </motion.div>
+                  <Link key={i} href={`/products/chemicals#${item.name.toLowerCase().replace(/[^a-z0-9]/g, '-')}`}>
+                    <motion.div whileHover={{ y: -5 }} className="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm transition-all h-full">
+                      <div className="relative h-48 rounded-xl overflow-hidden mb-6">
+                        <Image src={item.img} alt={item.name} fill className="object-cover" />
+                      </div>
+                      <span className="text-[10px] font-bold uppercase text-[#002147] bg-[#002147]/10 px-2 py-1 rounded mb-2 inline-block">{item.grade}</span>
+                      <h4 className="text-xl font-bold mb-2">{item.name}</h4>
+                      <p className="text-slate-500 text-sm mb-4">{item.desc}</p>
+                      <div className="flex justify-between items-center pt-4 border-t border-slate-100">
+                        <span className="text-xs font-bold text-slate-400">SKU: {item.sku}</span>
+                        <div className="text-[#002147] font-bold text-sm flex items-center gap-1 hover:underline">Inquiry <ArrowRight className="w-4 h-4" /></div>
+                      </div>
+                    </motion.div>
+                  </Link>
                 ))}
               </div>
             </div>
 
             <div>
-              <div className="flex items-center gap-3 mb-8">
-                <FlaskConical className="text-[#002147] w-8 h-8" />
-                <h3 className="text-2xl font-bold">Precision Glassware</h3>
+              <div className="flex items-center justify-between mb-8 gap-4">
+                <div className="flex items-center gap-3">
+                  <FlaskConical className="text-[#002147] w-8 h-8" />
+                  <h3 className="text-2xl font-bold">Precision Glassware</h3>
+                </div>
+                <Link href="/products/glassware" className="text-sm font-bold text-[#002147] hover:underline flex items-center gap-2">
+                  View Full Category <ArrowRight className="w-4 h-4" />
+                </Link>
               </div>
               <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
                 {glassware.map((item, i) => (
-                  <motion.div key={i} whileHover={{ y: -5 }} className="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm transition-all">
-                    <div className="relative h-48 rounded-xl overflow-hidden mb-6">
-                      <Image src={item.img} alt={item.name} fill className="object-cover" />
-                    </div>
-                    <span className="text-[10px] font-bold uppercase text-[#002147] bg-[#002147]/10 px-2 py-1 rounded mb-2 inline-block">{item.grade}</span>
-                    <h4 className="text-xl font-bold mb-2">{item.name}</h4>
-                    <p className="text-slate-500 text-sm mb-4">{item.desc}</p>
-                    <div className="flex justify-between items-center pt-4 border-t border-slate-100">
-                      <span className="text-xs font-bold text-slate-400">SKU: {item.sku}</span>
-                      <a href="#contact" className="text-[#002147] font-bold text-sm flex items-center gap-1 hover:underline">Inquiry <ArrowRight className="w-4 h-4" /></a>
-                    </div>
-                  </motion.div>
+                  <Link key={i} href={`/products/glassware#${item.name.toLowerCase().replace(/[^a-z0-9]/g, '-')}`}>
+                    <motion.div whileHover={{ y: -5 }} className="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm transition-all h-full">
+                      <div className="relative h-48 rounded-xl overflow-hidden mb-6">
+                        <Image src={item.img} alt={item.name} fill className="object-cover" />
+                      </div>
+                      <span className="text-[10px] font-bold uppercase text-[#002147] bg-[#002147]/10 px-2 py-1 rounded mb-2 inline-block">{item.grade}</span>
+                      <h4 className="text-xl font-bold mb-2">{item.name}</h4>
+                      <p className="text-slate-500 text-sm mb-4">{item.desc}</p>
+                      <div className="flex justify-between items-center pt-4 border-t border-slate-100">
+                        <span className="text-xs font-bold text-slate-400">SKU: {item.sku}</span>
+                        <div className="text-[#002147] font-bold text-sm flex items-center gap-1 hover:underline">Inquiry <ArrowRight className="w-4 h-4" /></div>
+                      </div>
+                    </motion.div>
+                  </Link>
                 ))}
               </div>
             </div>
@@ -309,20 +323,42 @@ export default function HomePage() {
             </div>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
               {industries.map((industry, i) => (
-                <motion.div key={i} whileHover={{ scale: 1.02 }} className="group rounded-2xl overflow-hidden border border-slate-200 hover:shadow-2xl transition-all">
-                  <div className="relative h-48">
-                    <Image src={industry.img} alt={industry.title} fill className="object-cover" />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent"></div>
-                    <div className="absolute bottom-4 left-4 flex items-center gap-3 text-white">
-                      <industry.icon className="w-5 h-5 text-white/70" />
-                      <h4 className="font-bold text-lg">{industry.title}</h4>
+                <Link href={`/solutions/${industry.slug}`} key={i} className="group flex">
+                  <motion.div 
+                    whileHover={{ y: -10 }} 
+                    className="relative overflow-hidden rounded-3xl bg-white border border-slate-100 shadow-lg hover:shadow-2xl transition-all duration-500 flex flex-col w-full"
+                  >
+                    {/* Image Container with Zoom Effect */}
+                    <div className="relative h-64 overflow-hidden">
+                      <Image 
+                        src={industry.img} 
+                        alt={industry.title} 
+                        fill 
+                        className="object-cover transition-transform duration-700 group-hover:scale-110" 
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-[#002147] via-transparent to-transparent opacity-80 group-hover:opacity-90 transition-opacity" />
+                      
+                      {/* Icon Badge */}
+                      <div className="absolute top-6 left-6 size-12 rounded-2xl bg-white/10 backdrop-blur-xl border border-white/20 flex items-center justify-center text-white">
+                        <industry.icon className="w-6 h-6" />
+                      </div>
+
+                      <div className="absolute bottom-6 left-6 right-6">
+                        <h4 className="text-2xl font-black text-white mb-2 leading-tight">{industry.title}</h4>
+                        <div className="flex items-center gap-2 text-white/70 text-xs font-bold uppercase tracking-widest overflow-hidden h-0 group-hover:h-5 transition-all duration-300">
+                           Expert Solutions <ArrowRight className="w-4 h-4" />
+                        </div>
+                      </div>
                     </div>
-                  </div>
-                  <div className="p-6">
-                    <p className="text-slate-600 text-sm leading-relaxed mb-4">{industry.desc}</p>
-                    <a href="#contact" className="text-[#002147] font-bold text-xs uppercase flex items-center gap-1 hover:gap-2 transition-all">Explore Solutions <ArrowRight className="w-3 h-3" /></a>
-                  </div>
-                </motion.div>
+                    
+                    <div className="p-8 flex flex-col flex-grow">
+                      <p className="text-slate-600 leading-relaxed mb-6 group-hover:text-slate-900 transition-colors">{industry.desc}</p>
+                      <div className="mt-auto flex items-center gap-2 text-[#002147] font-bold text-sm">
+                        Explore Solutions <ArrowRight className="w-4 h-4 group-hover:translate-x-2 transition-transform" />
+                      </div>
+                    </div>
+                  </motion.div>
+                </Link>
               ))}
             </div>
           </div>
@@ -380,6 +416,14 @@ export default function HomePage() {
                     <div className="flex flex-col gap-2">
                       <label className="text-sm font-bold text-slate-700">Organization</label>
                       <input required type="text" className="h-12 px-4 rounded-lg bg-slate-50 border border-slate-200 focus:ring-2 focus:ring-[#002147] outline-none" placeholder="Institution" value={formState.organization} onChange={(e) => setFormState({ ...formState, organization: e.target.value })} />
+                    </div>
+                    <div className="flex flex-col gap-2">
+                      <label className="text-sm font-bold text-slate-700">Requirement</label>
+                      <input required type="text" className="h-12 px-4 rounded-lg bg-slate-50 border border-slate-200 focus:ring-2 focus:ring-[#002147] outline-none" placeholder="What do you need?" value={formState.requirement} onChange={(e) => setFormState({ ...formState, requirement: e.target.value })} />
+                    </div>
+                    <div className="flex flex-col gap-2">
+                      <label className="text-sm font-bold text-slate-700">Quantity</label>
+                      <input required type="number" className="h-12 px-4 rounded-lg bg-slate-50 border border-slate-200 focus:ring-2 focus:ring-[#002147] outline-none" placeholder="Numbers only" value={formState.quantity} onChange={(e) => setFormState({ ...formState, quantity: e.target.value })} />
                     </div>
                     <div className="flex flex-col gap-2 md:col-span-2">
                       <label className="text-sm font-bold text-slate-700">Contact Details</label>
