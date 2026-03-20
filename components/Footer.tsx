@@ -8,9 +8,9 @@ const Footer = () => {
       <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
         <div className="col-span-1 lg:col-span-1">
           <div className="mb-8">
-            <img 
-              src="/logo.jpg" 
-              alt="Wellness Corporate Healthcare" 
+            <img
+              src="/logo.jpg"
+              alt="Wellness Corporate Healthcare"
               className="h-20 w-auto object-contain"
             />
           </div>
@@ -61,7 +61,7 @@ const Footer = () => {
           </div>
           <div className="flex items-center gap-2 text-sm text-slate-900 font-bold">
             <Mail className="text-[#002147] w-4 h-4" />
-            support@wellnesshealthcare.in
+            support@wellnesscorporatehealthcare.in
           </div>
         </div>
       </div>

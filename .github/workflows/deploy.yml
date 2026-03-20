@@ -1,8 +1,3 @@
-# GitHub Actions Workflow for deploying to Google Cloud Run
-#
-# SETUP COMPLETE: No GitHub Secrets or Variables are required for this project.
-# The configuration is hardcoded below.
-
 name: Deploy to Google Cloud Run
 
 on:

@@ -5,32 +5,32 @@ import Image from 'next/image';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import { motion } from 'motion/react';
-import { 
-  ArrowRight, 
-  CheckCircle2, 
-  ShieldCheck, 
-  Gavel, 
-  Truck, 
-  FlaskConical, 
-  Microscope, 
-  Landmark, 
-  Globe, 
-  Target, 
-  Eye, 
-  Package, 
-  BarChart3, 
-  Download, 
-  Mail, 
-  Phone, 
-  MapPin, 
-  Send, 
-  Clock, 
-  MessageSquare, 
-  AlertTriangle, 
-  ClipboardCheck, 
-  Award, 
-  HeartPulse, 
-  Lock, 
+import {
+  ArrowRight,
+  CheckCircle2,
+  ShieldCheck,
+  Gavel,
+  Truck,
+  FlaskConical,
+  Microscope,
+  Landmark,
+  Globe,
+  Target,
+  Eye,
+  Package,
+  BarChart3,
+  Download,
+  Mail,
+  Phone,
+  MapPin,
+  Send,
+  Clock,
+  MessageSquare,
+  AlertTriangle,
+  ClipboardCheck,
+  Award,
+  HeartPulse,
+  Lock,
   Check,
   Sprout,
   Droplets,
@@ -76,12 +76,12 @@ export default function HomePage() {
   return (
     <div className="min-h-screen flex flex-col">
       <Navbar />
-      
+
       <main className="flex-grow">
         {/* --- HOME SECTION --- */}
         <section id="home" className="relative overflow-hidden bg-[#f5f7f8] pt-16 pb-24 px-6 md:px-10 lg:px-20">
           <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            <motion.div 
+            <motion.div
               initial={{ opacity: 0, x: -20 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
@@ -120,7 +120,7 @@ export default function HomePage() {
           <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-6">
             {[
               { icon: ShieldCheck, label: 'GeM Registered', title: 'Verified Seller', color: 'bg-green-100 text-green-600' },
-              { icon: Gavel, label: 'Govt Contracts', title: '1000+ Completed', color: 'bg-blue-100 text-blue-600' },
+              { icon: Gavel, label: 'Govt Contracts', title: '150+ Completed', color: 'bg-blue-100 text-blue-600' },
               { icon: Truck, label: 'Delivery Reach', title: 'Pan-India Support', color: 'bg-purple-100 text-purple-600' },
             ].map((stat, i) => (
               <div key={i} className="bg-white p-8 rounded-xl border border-slate-200 shadow-sm flex items-center gap-6">
@@ -140,7 +140,7 @@ export default function HomePage() {
         <section id="about" className="py-24 bg-white px-6 md:px-20">
           <div className="max-w-7xl mx-auto">
             <div className="grid lg:grid-cols-2 gap-16 items-center mb-24">
-              <motion.div 
+              <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
@@ -153,11 +153,11 @@ export default function HomePage() {
                 </p>
                 <div className="grid grid-cols-2 gap-8 mt-4">
                   <div>
-                    <h4 className="text-[#002147] text-4xl font-bold mb-1">15+</h4>
+                    <h4 className="text-[#002147] text-4xl font-bold mb-1">7+</h4>
                     <p className="text-slate-400 text-sm uppercase font-bold tracking-wider">Years Experience</p>
                   </div>
                   <div>
-                    <h4 className="text-[#002147] text-4xl font-bold mb-1">500+</h4>
+                    <h4 className="text-[#002147] text-4xl font-bold mb-1">250+</h4>
                     <p className="text-slate-400 text-sm uppercase font-bold tracking-wider">Govt Labs Served</p>
                   </div>
                 </div>
@@ -324,20 +324,20 @@ export default function HomePage() {
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
               {industries.map((industry, i) => (
                 <Link href={`/solutions/${industry.slug}`} key={i} className="group flex">
-                  <motion.div 
-                    whileHover={{ y: -10 }} 
+                  <motion.div
+                    whileHover={{ y: -10 }}
                     className="relative overflow-hidden rounded-3xl bg-white border border-slate-100 shadow-lg hover:shadow-2xl transition-all duration-500 flex flex-col w-full"
                   >
                     {/* Image Container with Zoom Effect */}
                     <div className="relative h-64 overflow-hidden">
-                      <Image 
-                        src={industry.img} 
-                        alt={industry.title} 
-                        fill 
-                        className="object-cover transition-transform duration-700 group-hover:scale-110" 
+                      <Image
+                        src={industry.img}
+                        alt={industry.title}
+                        fill
+                        className="object-cover transition-transform duration-700 group-hover:scale-110"
                       />
                       <div className="absolute inset-0 bg-gradient-to-t from-[#002147] via-transparent to-transparent opacity-80 group-hover:opacity-90 transition-opacity" />
-                      
+
                       {/* Icon Badge */}
                       <div className="absolute top-6 left-6 size-12 rounded-2xl bg-white/10 backdrop-blur-xl border border-white/20 flex items-center justify-center text-white">
                         <industry.icon className="w-6 h-6" />
@@ -346,11 +346,11 @@ export default function HomePage() {
                       <div className="absolute bottom-6 left-6 right-6">
                         <h4 className="text-2xl font-black text-white mb-2 leading-tight">{industry.title}</h4>
                         <div className="flex items-center gap-2 text-white/70 text-xs font-bold uppercase tracking-widest overflow-hidden h-0 group-hover:h-5 transition-all duration-300">
-                           Expert Solutions <ArrowRight className="w-4 h-4" />
+                          Expert Solutions <ArrowRight className="w-4 h-4" />
                         </div>
                       </div>
                     </div>
-                    
+
                     <div className="p-8 flex flex-col flex-grow">
                       <p className="text-slate-600 leading-relaxed mb-6 group-hover:text-slate-900 transition-colors">{industry.desc}</p>
                       <div className="mt-auto flex items-center gap-2 text-[#002147] font-bold text-sm">
@@ -389,12 +389,12 @@ export default function HomePage() {
                     <div className="size-12 rounded-xl bg-[#002147] flex items-center justify-center text-white"><Mail className="w-6 h-6" /></div>
                     <div>
                       <h4 className="font-bold text-slate-900 mb-1">Email</h4>
-                      <p className="text-slate-500 text-sm">support@wellnesshealthcare.in</p>
+                      <p className="text-slate-500 text-sm">support@wellnesscorporatehealthcare.in</p>
                     </div>
                   </div>
                 </div>
                 <div className="mt-12 rounded-2xl overflow-hidden shadow-lg border border-slate-200 h-64">
-                   <iframe
+                  <iframe
                     width="100%"
                     height="100%"
                     style={{ border: 0 }}
