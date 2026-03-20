@@ -57,8 +57,7 @@ const Footer = () => {
           </p>
           <div className="flex items-center gap-2 text-sm text-slate-900 font-bold mb-2">
             <Phone className="text-[#002147] w-4 h-4" />
-            +91 (11) 4567-8900
-          </div>
+            +91-9709781104          </div>
           <div className="flex items-center gap-2 text-sm text-slate-900 font-bold">
             <Mail className="text-[#002147] w-4 h-4" />
             support@wellnesscorporatehealthcare.in

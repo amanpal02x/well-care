@@ -37,6 +37,7 @@ import {
   GraduationCap
 } from 'lucide-react';
 import Link from 'next/link';
+import { sendEmail } from '@/app/actions/send-email';
 
 export default function HomePage() {
   const [formState, setFormState] = useState({
@@ -46,10 +47,30 @@ export default function HomePage() {
     quantity: '',
     contactDetails: ''
   });
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitMessage, setSubmitMessage] = useState<{ type: 'success' | 'error', text: string } | null>(null);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    alert('Thank you for your inquiry. Our team will contact you shortly.');
+    setIsSubmitting(true);
+    setSubmitMessage(null);
+
+    const result = await sendEmail(formState);
+
+    if (result.success) {
+      setSubmitMessage({ type: 'success', text: 'Thank you for your inquiry. Our team will contact you shortly.' });
+      setFormState({
+        name: '',
+        organization: '',
+        requirement: '',
+        quantity: '',
+        contactDetails: ''
+      });
+    } else {
+      setSubmitMessage({ type: 'error', text: result.message || 'Something went wrong. Please try again later.' });
+    }
+    
+    setIsSubmitting(false);
   };
 
   const chemicals = [
@@ -430,8 +451,19 @@ export default function HomePage() {
                       <input required type="text" className="h-12 px-4 rounded-lg bg-slate-50 border border-slate-200 focus:ring-2 focus:ring-[#002147] outline-none" placeholder="Email or Phone" value={formState.contactDetails} onChange={(e) => setFormState({ ...formState, contactDetails: e.target.value })} />
                     </div>
                     <div className="md:col-span-2">
-                      <button type="submit" className="w-full h-14 bg-[#002147] text-white rounded-xl font-bold flex items-center justify-center gap-2 hover:bg-[#002147]/90 transition-all shadow-lg shadow-[#002147]/20">Submit Inquiry <Send className="w-4 h-4" /></button>
+                      <button 
+                        type="submit" 
+                        disabled={isSubmitting}
+                        className="w-full h-14 bg-[#002147] text-white rounded-xl font-bold flex items-center justify-center gap-2 hover:bg-[#002147]/90 transition-all shadow-lg shadow-[#002147]/20 disabled:opacity-70 disabled:cursor-not-allowed"
+                      >
+                        {isSubmitting ? 'Sending Request...' : 'Submit Inquiry'} <Send className="w-4 h-4" />
+                      </button>
                     </div>
+                    {submitMessage && (
+                      <div className={`md:col-span-2 p-4 rounded-xl text-sm font-medium ${submitMessage.type === 'success' ? 'bg-emerald-50 text-emerald-700 border border-emerald-100' : 'bg-rose-50 text-rose-700 border border-rose-100'}`}>
+                        {submitMessage.text}
+                      </div>
+                    )}
                   </form>
                 </div>
               </div>
