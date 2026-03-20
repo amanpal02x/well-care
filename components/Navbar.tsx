@@ -55,7 +55,7 @@ const Navbar = () => {
               />
             </div>
           )}
-          <Link href="/contact">
+          <Link href="#contact">
             <button className="bg-[#002147] text-white px-5 py-2 rounded-lg text-sm font-bold tracking-wide hover:opacity-90 transition-opacity whitespace-nowrap">
               Get Quote
             </button>
