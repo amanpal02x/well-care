@@ -35,7 +35,7 @@ export const industriesData: Record<string, IndustryData> = {
     id: 'government-labs',
     title: 'Government Labs',
     icon: Landmark,
-    heroImg: '/solutions/government-labs.png',
+    heroImg: '/solutions/government-labs.jpg',
     longDesc: 'We provide end-to-end diagnostic solutions tailored for state and central government laboratories, ensuring compliance with national health standards and GeM procurement guidelines.',
     features: [
       'GeM-compliant procurement workflows',
@@ -59,7 +59,7 @@ export const industriesData: Record<string, IndustryData> = {
     id: 'agriculture-soil',
     title: 'Agriculture & Soil',
     icon: Sprout,
-    heroImg: '/solutions/agriculture-soil.png',
+    heroImg: '/solutions/agriculture-soil.jpg',
     longDesc: 'Our specialized equipment and reagents empower soil health laboratories to provide accurate nutritional analysis, helping farmers optimize crop yields across India.',
     features: [
       'Automated soil nutrient testing systems',
@@ -83,7 +83,7 @@ export const industriesData: Record<string, IndustryData> = {
     id: 'environmental-testing',
     title: 'Environmental Testing',
     icon: Droplets,
-    heroImg: '/solutions/environmental-testing.png',
+    heroImg: '/solutions/environmental-testing.jpg',
     longDesc: 'Providing advanced solutions for water quality monitoring and air pollution analysis, helping regulatory bodies maintain environmental safety standards.',
     features: [
       'Real-time water quality monitoring stations',
@@ -107,7 +107,7 @@ export const industriesData: Record<string, IndustryData> = {
     id: 'pharmaceutical-qc',
     title: 'Pharmaceutical QC',
     icon: FlaskConical,
-    heroImg: '/solutions/pharmaceutical-qc.png',
+    heroImg: '/solutions/pharmaceutical-qc.jpg',
     longDesc: 'Empowering pharmaceutical manufacturers with high-purity solvents and glassware that meet the most stringent USP, BP, and IP standards.',
     features: [
       'Ultra-pure HPLC and Spectroscopy grade solvents',
@@ -131,7 +131,7 @@ export const industriesData: Record<string, IndustryData> = {
     id: 'research-biotech',
     title: 'Research & Biotech',
     icon: Microscope,
-    heroImg: '/solutions/research-biotech.png',
+    heroImg: '/solutions/research-biotech.jpg',
     longDesc: 'Supporting the next generation of scientific breakthroughs with specialized reagents, genomic tools, and advanced laboratory infrastructure.',
     features: [
       'Next-Gen Sequencing (NGS) reagents',
@@ -155,7 +155,7 @@ export const industriesData: Record<string, IndustryData> = {
     id: 'universities',
     title: 'Universities',
     icon: GraduationCap,
-    heroImg: '/solutions/universities.png',
+    heroImg: '/solutions/universities.jpg',
     longDesc: 'Equipping academic institutions with durable, high-quality scientific tools that withstand the rigors of student use while maintaining educational excellence.',
     features: [
       'Standardized lab glassware for large batches',

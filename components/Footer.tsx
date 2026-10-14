@@ -30,11 +30,12 @@ const Footer = () => {
         <div>
           <h4 className="text-slate-900 font-bold mb-6">Quick Links</h4>
           <ul className="space-y-4 text-sm text-slate-500">
-            <li><Link href="#about" className="hover:text-[#002147] transition-colors">About Us</Link></li>
-            <li><Link href="#products" className="hover:text-[#002147] transition-colors">Products Catalog</Link></li>
-            <li><Link href="#government" className="hover:text-[#002147] transition-colors">GeM Marketplace</Link></li>
-            <li><Link href="#government" className="hover:text-[#002147] transition-colors">Government Tenders</Link></li>
-            <li><Link href="#industries" className="hover:text-[#002147] transition-colors">Sustainability</Link></li>
+            <li><Link href="/#about" className="hover:text-[#002147] transition-colors">About Us</Link></li>
+            <li><Link href="/#products" className="hover:text-[#002147] transition-colors">Products Catalog</Link></li>
+            <li><Link href="/#manufacturing" className="hover:text-[#002147] transition-colors">Manufacturing Services</Link></li>
+            <li><Link href="/#government" className="hover:text-[#002147] transition-colors">GeM Marketplace</Link></li>
+            <li><Link href="/#government" className="hover:text-[#002147] transition-colors">Government Tenders</Link></li>
+            <li><Link href="/#industries" className="hover:text-[#002147] transition-colors">Sustainability</Link></li>
           </ul>
         </div>
 

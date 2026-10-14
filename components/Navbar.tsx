@@ -11,13 +11,14 @@ const Navbar = () => {
   const pathname = usePathname();
 
   const navLinks = [
-    { name: 'Home', href: '#' },
-    { name: 'About', href: '#about' },
-    { name: 'Products', href: '#products' },
-    { name: 'Compliance', href: '#compliance' },
-    { name: 'Government', href: '#government' },
-    { name: 'Industries', href: '#industries' },
-    { name: 'Contact', href: '#contact' },
+    { name: 'Home', href: '/#' },
+    { name: 'About', href: '/#about' },
+    { name: 'Products', href: '/#products' },
+    { name: 'Manufacturing', href: '/#manufacturing' },
+    { name: 'Compliance', href: '/#compliance' },
+    { name: 'Government', href: '/#government' },
+    { name: 'Industries', href: '/#industries' },
+    { name: 'Contact', href: '/#contact' },
   ];
 
   return (

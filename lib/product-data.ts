@@ -34,8 +34,8 @@ export const productsData: Record<string, ProductData> = {
     id: 'chemicals',
     title: 'Laboratory Chemicals',
     icon: Microscope,
-    heroImg: '/products/chemicals.png',
-    longDesc: 'Our laboratory chemicals are engineered for absolute purity and consistency. We provide a comprehensive range of analytical reagents, HPLC solvents, and specialized synthesis chemicals from world-class manufacturing partners.',
+    heroImg: '/products/chemicals.jpg',
+    longDesc: 'Our laboratory chemicals are engineered for absolute purity and consistency. We provide a comprehensive range of analytical reagents, HPLC solvents, and specialized synthesis chemicals meeting strict global pharmacopeia and research benchmarks.',
     catalog: [
       { name: 'Sulfuric Acid 98%', grade: 'AR/GR Grade', desc: 'High purity analytical reagent grade for complex laboratory synthesis.', sku: 'CH-4429', cas: '7664-93-9' },
       { name: 'Methanol', grade: 'HPLC Grade', desc: 'Purified for high-performance liquid chromatography and spectroscopy.', sku: 'SL-8812', cas: '67-56-1' },
@@ -59,7 +59,7 @@ export const productsData: Record<string, ProductData> = {
     id: 'glassware',
     title: 'Precision Glassware',
     icon: FlaskConical,
-    heroImg: '/products/glassware.png',
+    heroImg: '/products/glassware.jpg',
     longDesc: 'Crafted from premium Borosilicate 3.3 glass, our glassware offers superior thermal shock resistance, chemical durability, and individual calibration for unmatched volumetric accuracy.',
     catalog: [
       { name: 'Erlenmeyer Flasks', grade: 'Borosilicate 3.3', desc: 'Heat resistant with heavy-duty rims for safe sample storage.', sku: 'GW-201' },
